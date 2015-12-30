@@ -21,4 +21,8 @@ class OrderController extends Controller
     return view('neworder');
 
   }
+  public function show()
+  {
+    return "test";
+  }
 }
