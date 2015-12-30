@@ -23,6 +23,6 @@ class OrderController extends Controller
   }
   public function show()
   {
-    return "test";
+    return view('selectorders');
   }
 }
