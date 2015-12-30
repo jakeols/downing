@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::resource('order', 'OrderController');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
