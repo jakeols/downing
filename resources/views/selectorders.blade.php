@@ -20,13 +20,14 @@ Continue Order
 </tr>
 </thead>
 <tbody>
+  @foreach ($availableinventory as $availableinventory)
   <tr>
     <td><img src="http://i.imgur.com/JkqGIxN.jpg" height="200"></img></td>
-    <td><p>BANNERSTANDS</p></td>
+    <td><p>{{ $availableinventory['type'] }}</p></td>
     <td>
-      <p>DYE-SUB PRINT ON MICROKNIT APPLIED TO A QUCKCREEN 3 BANNERSTAND</p>
+      <p>{{ $availableinventory['description'] }}</p>
     </td>
-    <td><p>1</p></td>
+    <td><p>{{ $availableinventory['stock'] }}</p></td>
     <td>
       <form class="form-inline" action="/order/review">
         <div class="form-group">
@@ -41,6 +42,7 @@ Continue Order
     </div>
       </td>
   </tr>
+  @endforeach
   <tr>
     <td>  <button type="submit" class="btn btn-primary">Review Order</button>
       </form>
