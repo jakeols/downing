@@ -3,6 +3,12 @@
 Continue Order
 @endsection
 @section('content')
+<h6>Order Complete Status</h6>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;">
+    33%
+  </div>
+</div>
 <table class="table table-hover">
   <thead>
 <tr>
@@ -22,8 +28,22 @@ Continue Order
     </td>
     <td><p>1</p></td>
     <td>
-      <form class="form-inline">
-        <input class="form-control" type="text"><button type="submit" class="btn btn-primary">Add</button>
+      <form class="form-inline" action="/order/review">
+        <div class="form-group">
+        <input class="form-control" type="text" placeholder="Quantity">
+      </div>
+      <div class="form-group">
+        <div class="checkbox">
+    <label>
+      <input type="checkbox">Add to Order
+    </label>
+  </div>
+    </div>
+      </td>
+  </tr>
+  <tr>
+    <td>  <button type="submit" class="btn btn-primary">Review Order</button>
+      </form>
     </td>
   </tr>
 </tbody>

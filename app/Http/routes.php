@@ -15,7 +15,16 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/order/review', function ()
+{
+  return 'test';
+});
+
 Route::resource('order', 'OrderController');
+Route::get('/login', function ()
+{
+  return view('login');
+});
 
 /*
 |--------------------------------------------------------------------------
