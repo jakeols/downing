@@ -21,6 +21,7 @@ Route::get('/order/review', function ()
 });
 
 Route::resource('order', 'OrderController');
+Route::resource('inventory', 'InventoryController');
 Route::get('/login', function ()
 {
   return view('login');

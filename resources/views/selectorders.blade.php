@@ -5,8 +5,8 @@ Continue Order
 @section('content')
 <h6>Order Complete Status</h6>
 <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;">
-    33%
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+    0%
   </div>
 </div>
 <table class="table table-hover">
@@ -29,9 +29,10 @@ Continue Order
     </td>
     <td><p>{{ $availableinventory['stock'] }}</p></td>
     <td>
-      <form class="form-inline" action="/order/review">
+      <form class="form-inline" method="POST" action="/order/show">
         <div class="form-group">
         <input class="form-control" type="text" placeholder="Quantity">
+        <input type="hidden" id="{{ $availableinventory['objectId'] }}">
       </div>
       <div class="form-group">
         <div class="checkbox">

@@ -20,21 +20,14 @@ class OrderController extends Controller
   }
 
   // create new order
-  public function create()
+  public function show($id)
   {
-    return view('neworder');
+    $id = $request->all();
+    var_dump($id);
+
+    // return view('neworder');
 
   }
-  public function show()
-  {
-    $query = new ParseQuery("Inventory");
-    $results = $query->find();
-    foreach ($results as $key => $value) {
-      $availableinventory[] = array("objectId" => $value->getobjectId(), "type" => $value->Type, "description" => $value->Description, "stock" => $value->Stock);
-    }
-    // var_dump($availableinventory);
-     $view = view('selectorders')->with('availableinventory', $availableinventory);
-     return $view;
-  }
+
 
 }

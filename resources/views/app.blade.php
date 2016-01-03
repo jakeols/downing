@@ -146,7 +146,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item  ">
-                                    <a href="/order/create" class="nav-link ">
+                                    <a href="/inventory/" class="nav-link ">
                                         <span class="title">New Order
                                     </a>
                                 </li>
