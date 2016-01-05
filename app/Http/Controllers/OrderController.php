@@ -19,11 +19,15 @@ class OrderController extends Controller
     return view('currentorders');
   }
 
+  public function create()
+  {
+    return view('neworder');
+  }
+
   // create new order
   public function show($id)
   {
-    $id = $request->all();
-    var_dump($id);
+
 
     // return view('neworder');
 

@@ -3,5 +3,8 @@
 Dashboard
 @endsection
 @section('content')
-<a href="/order/create" class="startnew"><h2 class="startnew">No order, start new?</h2></a>
+
+@foreach ($results as $result)
+<a class="startnew" href="{{URL::to($result['link']) }}"><h2 class="startnew">{{ $result['message']}}</h2></a>
+@endforeach
 @endsection

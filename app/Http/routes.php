@@ -19,21 +19,25 @@ Route::get('/', function () {
   // query orders
   $query = new ParseQuery("Orders");
   $results = $query->find();
-  //create array of orders
+
 foreach ($results as $key => $value) {
-  $results[] = $value->Active;
+  $orderstatus[] = json_encode($value->Active);
 }
-  //check if true exists in any bool for order->Active
-  if (in_array('True', $results)) {
-    // an order is marked with bool = true, active orders
-    $results = "You have orders";
+print_r($orderstatus);
+  if (in_array("true", $orderstatus, true)) {
+    // echo 'at least one order set to true';
+    //create array
+    $data[] = array("message" => "You have orders", "link" => "/order");
   }
   else {
-    // no orders are marked with bool = true, no active orders
-    $results = "No orders, start new?";
+    // echo 'no orders set to false';
+    $data[] = array("message" => "No orders, start new?", "link" => "/order/create");
   }
-  echo $results;
-    // return view('dashboard');
+
+
+
+  $view = view('dashboard')->with(array('results' => $data));
+  return $view;
 });
 
 Route::get('/order/review', function ()
