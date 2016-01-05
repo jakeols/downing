@@ -11,8 +11,29 @@
 |
 */
 
+//parse
+use Parse\ParseObject;
+use Parse\ParseQuery;
+
 Route::get('/', function () {
-    return view('dashboard');
+  // query orders
+  $query = new ParseQuery("Orders");
+  $results = $query->find();
+  //create array of orders
+foreach ($results as $key => $value) {
+  $results[] = $value->Active;
+}
+  //check if true exists in any bool for order->Active
+  if (in_array('True', $results)) {
+    // an order is marked with bool = true, active orders
+    $results = "You have orders";
+  }
+  else {
+    // no orders are marked with bool = true, no active orders
+    $results = "No orders, start new?";
+  }
+  echo $results;
+    // return view('dashboard');
 });
 
 Route::get('/order/review', function ()

@@ -29,7 +29,7 @@ Continue Order
     </td>
     <td><p>{{ $availableinventory['stock'] }}</p></td>
     <td>
-      <form class="form-inline" method="POST" action="/order/show">
+      {{ Form::open(array('url' => '/order/show', 'class' => 'form-inline'))}}
         <div class="form-group">
         <input class="form-control" type="text" placeholder="Quantity">
         <input type="hidden" id="{{ $availableinventory['objectId'] }}">
@@ -46,7 +46,7 @@ Continue Order
   @endforeach
   <tr>
     <td>  <button type="submit" class="btn btn-primary">Review Order</button>
-      </form>
+      {{ Form::close() }}
     </td>
   </tr>
 </tbody>
