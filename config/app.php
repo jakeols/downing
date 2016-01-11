@@ -156,6 +156,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         'GrahamCampbell\Parse\ParseServiceProvider',
+        Collective\Html\HtmlServiceProvider::class,
+        'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
+
 
     ],
 
@@ -202,6 +205,10 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Cart' => 'Gloudemans\Shoppingcart\Facades\Cart',
+
 
     ],
 

@@ -5,8 +5,8 @@ Continue Order
 @section('content')
 <h6>Order Complete Status</h6>
 <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-    0%
+  <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;">
+    33%
   </div>
 </div>
 <table class="table table-hover">
